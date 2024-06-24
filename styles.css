@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.slider {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.slide.current {
+    opacity: 1;
+}
+
+.slide .content {
+    position: absolute;
+    bottom: 70px;
+    left: -600px;
+    opacity: 0;
+    width: 600px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    padding: 35px;
+}
+
+.slide.current .content {
+    opacity: 1;
+    transform: translateX(600px);
+    transition: all 0.7s ease-in-out 0.3s;
+}
+
+.slide:first-child {
+    background: url('slide1.jpg') no-repeat center center/cover;
+}
+
+.slide:nth-child(2) {
+    background: url('slide2.jpg') no-repeat center center/cover;
+}
+
+.slide:nth-child(3) {
+    background: url('slide3.jpg') no-repeat center center/cover;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+section {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.portfolio-item {
+    margin-bottom: 30px;
+}
+
+.portfolio-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input, form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+form button {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
